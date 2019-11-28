@@ -5,8 +5,6 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   providedIn: 'root'
 })
 export class EventsHandlerService {
-
-
   public errorHappened: BehaviorSubject<string> = new BehaviorSubject(null);
 
   public successHappened: BehaviorSubject<string> = new BehaviorSubject(null);
@@ -15,6 +13,7 @@ export class EventsHandlerService {
 
   public infoHappened: BehaviorSubject<string> = new BehaviorSubject(null);
 
-  constructor() { }
+  public goBackRequest: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
+  constructor() {}
 }

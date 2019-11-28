@@ -1,4 +1,3 @@
-import { Store } from '@ngrx/store';
 import { IUser } from '../../models';
 import { UserAuthService, EventsHandlerService } from '../../services';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
@@ -11,16 +10,15 @@ import { map, mergeMap, catchError } from 'rxjs/operators';
 export class UsersEffects {
   constructor(
     private actions$: Actions,
-    private userAuthService: UserAuthService,
-    private eventsHandlerService: EventsHandlerService,
-    private store: Store<{ user: IUser }>
+    private userService: UserAuthService,
+    private eventsHandlerService: EventsHandlerService
   ) {}
 
   LoadUsers$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.LoadUsers),
       mergeMap(() =>
-        this.userAuthService.getAll().pipe(
+        this.userService.getAll().pipe(
           map(users => fromActions.LoadUsersSuccess({ users })),
           catchError(err => of(fromActions.LoadUsersFail({ err })))
         )
@@ -32,7 +30,7 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.AddUser),
       mergeMap(({ user }) =>
-        this.userAuthService.register(user).pipe(
+        this.userService.register(user).pipe(
           map(() => fromActions.AddUserSuccess({ user })),
           catchError(err => of(fromActions.AddUserFail({ err })))
         )
@@ -44,7 +42,7 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.RemoveUser),
       mergeMap(({ user }) =>
-        this.userAuthService.removeItem(user).pipe(
+        this.userService.removeItem(user).pipe(
           map(() => fromActions.RemoveUserSuccess({ user })),
           catchError(err => of(fromActions.RemoveUserFail({ err })))
         )
@@ -56,7 +54,7 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.UpdateUser),
       mergeMap(({ user }) =>
-        this.userAuthService.modifyItem(user).pipe(
+        this.userService.modifyItem(user).pipe(
           map((res: IUser) => fromActions.UpdateUserSuccess({ user: res })),
           catchError(err => of(fromActions.UpdateUserFail({ err })))
         )
@@ -68,10 +66,11 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.SelectUserById),
       mergeMap(({ id }) =>
-        this.userAuthService.getById(id).pipe(map(res => fromActions.SelectUser({ user: res })))
+        this.userService.getById(id).pipe(map(res => fromActions.SelectUser({ user: res })))
       )
     )
   );
+
   error$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.AddUserFail, fromActions.UpdateUserFail, fromActions.RemoveUserFail),
@@ -96,8 +95,8 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.AddUserSuccess, fromActions.UpdateUserSuccess),
       map(({ user }) => {
-        this.store.dispatch(fromActions.SelectUser({ user: user as IUser }));
         this.eventsHandlerService.successHappened.next(`User saved successfully`);
+        this.eventsHandlerService.goBackRequest.next(true);
 
         return fromActions.triggerEvent(fromActions.UserSuccessEventTriggered);
       })
