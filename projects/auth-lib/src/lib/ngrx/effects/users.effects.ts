@@ -14,7 +14,7 @@ export class UsersEffects {
     private userAuthService: UserAuthService,
     private eventsHandlerService: EventsHandlerService,
     private store: Store<{ user: IUser }>
-  ) { }
+  ) {}
 
   LoadUsers$ = createEffect(() =>
     this.actions$.pipe(
@@ -34,7 +34,7 @@ export class UsersEffects {
       mergeMap(({ user }) =>
         this.userAuthService.register(user).pipe(
           map(() => fromActions.AddUserSuccess({ user })),
-          catchError((err) => of(fromActions.AddUserFail({ err })))
+          catchError(err => of(fromActions.AddUserFail({ err })))
         )
       )
     )
@@ -46,7 +46,7 @@ export class UsersEffects {
       mergeMap(({ user }) =>
         this.userAuthService.removeItem(user).pipe(
           map(() => fromActions.RemoveUserSuccess({ user })),
-          catchError((err) => of(fromActions.RemoveUserFail({ err })))
+          catchError(err => of(fromActions.RemoveUserFail({ err })))
         )
       )
     )
@@ -68,19 +68,13 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.SelectUserById),
       mergeMap(({ id }) =>
-        this.userAuthService
-          .getById(id)
-          .pipe(map(res => fromActions.SelectUser({ user: res })))
+        this.userAuthService.getById(id).pipe(map(res => fromActions.SelectUser({ user: res })))
       )
     )
   );
   error$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(
-        fromActions.AddUserFail,
-        fromActions.UpdateUserFail,
-        fromActions.RemoveUserFail
-      ),
+      ofType(fromActions.AddUserFail, fromActions.UpdateUserFail, fromActions.RemoveUserFail),
       map(({ err }) => {
         const er = err.error.validationError;
         const errorResponseArray: string[] = [];
@@ -90,8 +84,6 @@ export class UsersEffects {
         });
 
         const errorResponse = errorResponseArray.join(' \n');
-
-
 
         this.eventsHandlerService.errorHappened.next(errorResponse);
 
@@ -104,14 +96,10 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.AddUserSuccess, fromActions.UpdateUserSuccess),
       map(({ user }) => {
-        this.store.dispatch(fromActions.SelectUser({ user: user as IUser }))
-        this.eventsHandlerService.successHappened.next(
-          `User saved successfully`
-        );
+        this.store.dispatch(fromActions.SelectUser({ user: user as IUser }));
+        this.eventsHandlerService.successHappened.next(`User saved successfully`);
 
-        return fromActions.triggerEvent(
-          fromActions.UserSuccessEventTriggered
-        );
+        return fromActions.triggerEvent(fromActions.UserSuccessEventTriggered);
       })
     )
   );
@@ -120,14 +108,9 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.RemoveUserSuccess),
       map(({ user }) => {
-        this.eventsHandlerService.warningHappened.next(
-          `User #${user.id} removed Successfully`
-        );
-        return fromActions.triggerEvent(
-          fromActions.UserWarningEventTriggered
-        );
+        this.eventsHandlerService.warningHappened.next(`User #${user.id} removed Successfully`);
+        return fromActions.triggerEvent(fromActions.UserWarningEventTriggered);
       })
     )
   );
 }
-
