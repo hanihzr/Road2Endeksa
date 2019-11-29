@@ -75,16 +75,7 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.AddUserFail, fromActions.UpdateUserFail, fromActions.RemoveUserFail),
       map(({ err }) => {
-        const er = err.error.validationError;
-        const errorResponseArray: string[] = [];
-
-        Object.keys(er).map(item => {
-          errorResponseArray.push(er[item].toString());
-        });
-
-        const errorResponse = errorResponseArray.join(' \n');
-
-        this.eventsHandlerService.errorHappened.next(errorResponse);
+        this.eventsHandlerService.errorHappened.next(err);
 
         return fromActions.triggerEvent(fromActions.UserErrorEventTriggered);
       })

@@ -1,0 +1,40 @@
+.textbox-container {
+  position: relative;
+  display: table;
+  margin: 64px auto;
+
+  input {
+    outline: 0;
+    font-size: 40px;
+    border: 0;
+    z-index: 1;
+    color: #34495e;
+    border-bottom: 3px solid #bdc3c7;
+  }
+
+  label {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    margin: auto;
+    position: absolute;
+    box-sizing: border-box;
+    transition: width .3s linear;
+  }
+
+
+  input:focus+label {
+    width: 100%;
+    border-bottom: 3px solid #8e44ad;
+
+    &.ok {
+      border-bottom: 3px solid #27ae60;
+    }
+
+    &.error {
+      border-bottom: 3px solid #e74c3c;
+    }
+  }
+
+}

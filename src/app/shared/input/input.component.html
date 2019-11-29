@@ -1,0 +1,7 @@
+<section class="textbox-container" [formGroup]="inputForm">
+  <input type="text" [placeholder]="placeholder" [value]="value" #input (input)="valueChanged(input.value)"
+    [required]="required" formControlName="nativeInput" [type]="type">
+  <label *ngIf="!inputForm.dirty" class="defualt"> </label>
+  <label *ngIf="inputForm.dirty && inputForm.valid" class="ok"> </label>
+  <label *ngIf="inputForm.dirty && inputForm.invalid" class="error"> </label>
+</section>
