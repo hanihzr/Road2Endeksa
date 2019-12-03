@@ -28,8 +28,8 @@ export class SignInComponent implements OnInit {
   }
 
   login() {
-    // Since there is NO SERVER for Authentication, I am using a random response from my mockApi
-
+    // Since there is NO SERVER for Authentication, I am using a random response from my mockApi.
+    // And All you have to do is to press Login Button
     const user = {
       id: (Math.round(Math.random() * 10) + 1).toString(),
       username: this.userName,
