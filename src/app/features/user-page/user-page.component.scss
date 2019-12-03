@@ -3,6 +3,14 @@
 
   a {
     cursor: pointer;
+    display: block;
+    padding: 8px;
+    border-right: 1px solid #ecf0f1;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #ecf0f1;
+    }
   }
 
   table {
@@ -29,10 +37,6 @@
       text-align: center;
       background: #fff;
 
-      &.actions {
-        display: flex;
-        justify-content: space-around;
-      }
     }
   }
 
