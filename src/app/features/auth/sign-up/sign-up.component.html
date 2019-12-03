@@ -1,1 +1,11 @@
-<h1>You Did not ask me for this :)</h1>
+<ndska-input (changedValue)="valueChanged($event)" [placeholder]="'Name'" [required]="true">
+</ndska-input>
+<ndska-input (changedValue)="valueChanged($event)" [placeholder]="'Last Name'" [required]="true">
+</ndska-input>
+<ndska-input (changedValue)="valueChanged($event)" [placeholder]="'Username'" [required]="true" [type]="'email'">
+</ndska-input>
+<ndska-input (changedValue)="valueChanged($event)" [placeholder]="'Password'" [type]="'password'"></ndska-input>
+
+<div class="register">
+  <button ndskaButton [color]="'#27ae60'">Register</button>
+</div>

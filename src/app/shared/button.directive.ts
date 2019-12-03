@@ -1,15 +1,26 @@
-import { Directive, ElementRef, Renderer2, HostListener, HostBinding, Input } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Renderer2,
+  HostListener,
+  HostBinding,
+  Input,
+  OnInit
+} from '@angular/core';
 
 @Directive({
   selector: '[ndskaButton]'
 })
-export class ButtonDirective {
+export class ButtonDirective implements OnInit {
   @Input() color: string = '#2980b9';
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    this._color = this.color;
-  }
 
   @HostBinding('style.background-color') _color: string = this.color;
+
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+
+  ngOnInit() {
+    this._color = this.color;
+  }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.renderer.setStyle(this.elementRef.nativeElement, 'opacity', '0.8');
