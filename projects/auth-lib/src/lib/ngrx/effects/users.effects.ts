@@ -83,7 +83,7 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.AddUserFail, fromActions.UpdateUserFail, fromActions.RemoveUserFail),
       map(({ err }) => {
-        this.eventsHandlerService.errorHappened.next(err);
+        this.eventsHandlerService.errorHappened.next(err.message);
 
         return fromActions.triggerEvent(fromActions.UserErrorEventTriggered);
       })

@@ -7,6 +7,6 @@
 <ndska-input (changedValue)="passwordChanged($event)" [placeholder]="'Password'" [type]="'password'"></ndska-input>
 
 <div class="register">
-  <button ndskaButton [color]="'#27ae60'">Register</button>
+  <button ndskaButton [color]="'#27ae60'" (click)="signup()">Register</button>
   <a [routerLink]="['/']">Login</a>
 </div>
