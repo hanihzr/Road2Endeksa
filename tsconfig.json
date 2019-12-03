@@ -19,6 +19,9 @@
       "dom"
     ]
   },
+  "exclude": [
+    "dist"
+  ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true

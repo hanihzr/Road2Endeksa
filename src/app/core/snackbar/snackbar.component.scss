@@ -1,0 +1,92 @@
+.ndska-snackbar {
+  visibility: hidden;
+  min-width: 360px;
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  border-radius: 4px;
+  text-align: center;
+  padding: 16px;
+  z-index: 1;
+  color: #ecf0f1;
+}
+
+.ndska-snackbar.show {
+  visibility: visible;
+  animation: showin 0.5s, hide 0.5s 3s;
+  -moz-animation: showin 0.5s, hide 0.5s 3s;
+  -webkit-animation: showin 0.5s, hide 0.5s 3s;
+}
+
+
+@-webkit-keyframes showin {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes showin {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes showin {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes hide {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes hide {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,9 @@
+<ndska-input [value]="userName" (changedValue)="userNameChanged($event)" [placeholder]="'Username'" [required]="true"
+  [type]="'email'">
+</ndska-input>
+<ndska-input [value]="password" (changedValue)="passwordChanged($event)" [placeholder]="'Password'" [type]="'password'">
+</ndska-input>
+
+<div class="login">
+  <button ndskaButton>Login</button>
+</div>

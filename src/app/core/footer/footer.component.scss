@@ -1,0 +1,16 @@
+footer {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 128px;
+  height: 100%;
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 16px;
+  font-family: Ubuntu;
+
+  span {
+    padding: .4rem;
+  }
+}

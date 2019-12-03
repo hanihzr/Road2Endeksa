@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu&display=swap);
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+label,
+button,
+li,
+a {
+  font-family: Ubuntu;
+}
+
+
+button {
+  height: 4em;
+  padding: 1.5em;
+  width: 50%;
+  margin: 1em auto;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: white;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    letter-spacing: 0.8em;
+  }
+
+}

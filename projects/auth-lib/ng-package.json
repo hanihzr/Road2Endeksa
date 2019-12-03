@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/auth-lib",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@ngrx/effects": "@ngrx/effects",
+      "@ngrx/store": "@ngrx/store",
+      "@ngrx/entity": "@ngrx/entity",
+      "@ngrx/store-devtools": "@ngrx/store-devtools"
+    }
+  }
+}
