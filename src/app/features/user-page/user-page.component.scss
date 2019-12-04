@@ -36,7 +36,9 @@
     td {
       text-align: center;
       background: #fff;
-
+      font-size: large;
+      font-weight: bold;
+      color: #2c3e50;
     }
   }
 
@@ -57,6 +59,7 @@
       td {
         &:nth-child(1):before {
           content: 'id';
+          color: #ecf0f1;
         }
 
         &:nth-child(2):before {
@@ -73,6 +76,10 @@
           position: absolute;
           left: .5em;
           font-weight: bold;
+        }
+
+        span.id {
+          color: #ecf0f1;
         }
       }
 
