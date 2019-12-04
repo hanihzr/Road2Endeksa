@@ -1,11 +1,19 @@
-.login {
-  width: 50%;
+.login-container {
+  padding: 64px;
+  width: fit-content;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-}
 
-a {
-  margin: auto;
-  text-decoration: none;
+
+  .login {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    margin: auto;
+    text-decoration: none;
+  }
+
 }

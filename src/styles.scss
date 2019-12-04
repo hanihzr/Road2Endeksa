@@ -9,6 +9,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background: #ecf0f1;
 }
 
 h1,
@@ -28,11 +29,14 @@ a {
   font-family: Ubuntu;
 }
 
+input {
+  background: #ecf0f1;
+}
+
 
 button {
   height: 4em;
   padding: 1.5em;
-  width: 50%;
   margin: 1em auto;
   border: none;
   border-radius: 3px;
