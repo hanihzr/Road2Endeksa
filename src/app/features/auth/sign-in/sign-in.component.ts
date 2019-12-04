@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {}
 
-  // NOTE: I know that this is not a good idea, and it's better to use Angular Forms.
+  // NOTE: Ofcourse it's better to use `Angular Forms`.
   // But I am demonstrating how I created an INPUT COMPONENT in shared Module and now I'm using it without needing for any external library.
   userNameChanged(userName: string) {
     this.userName = userName;

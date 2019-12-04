@@ -1,0 +1,23 @@
+.avatar {
+  display: inline-flex;
+}
+
+.user-container {
+  padding: 64px;
+  width: fit-content;
+  margin: auto;
+
+
+  .user {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    margin: auto;
+    text-decoration: none;
+  }
+
+}

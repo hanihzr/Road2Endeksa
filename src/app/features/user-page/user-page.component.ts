@@ -13,6 +13,7 @@ export class UserPageComponent implements OnInit {
 
   constructor(private store: Store<{ user: IUser }>, private router: Router) {
     store.dispatch(LoadUsers());
+    window.scroll(0, 0);
   }
 
   ngOnInit() {

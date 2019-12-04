@@ -1,1 +1,28 @@
-<p>user-page-detail works!</p>
+<div class="user-container">
+  <ndska-input [value]="selectedUser?.first_name" (changedValue)="nameChanged($event)" [placeholder]="'Name'"
+    [required]="true">
+  </ndska-input>
+  <ndska-input [value]="selectedUser?.last_name" (changedValue)="lastnameChanged($event)" [placeholder]="'Last Name'"
+    [required]="true">
+  </ndska-input>
+  <ndska-input [value]="selectedUser?.email" (changedValue)="emailChanged($event)" [placeholder]="'email'"
+    [required]="true" [type]="'email'">
+  </ndska-input>
+  <ndska-input [value]="selectedUser?.username" (changedValue)="usernameChanged($event)" [placeholder]="'Username'"
+    [required]="true">
+  </ndska-input>
+  <div class="avatar">
+    <img *ngIf="selectedUser?.photo" [src]="selectedUser?.photo" alt="user_avatar" width="128">
+    <ndska-input [value]="selectedUser?.photo" (changedValue)="avatarChanged($event)" [placeholder]="'Avatar'"
+      [required]="true">
+    </ndska-input>
+  </div>
+  <ndska-input [value]="selectedUser?.password" (changedValue)="passwordChanged($event)" [placeholder]="'Password'"
+    [required]="true">
+  </ndska-input>
+
+  <div class="user">
+    <button ndskaButton [color]="'#27ae60'" (click)="save()">Save</button>
+  </div>
+
+</div>

@@ -25,7 +25,7 @@ export class UserAuthService {
   }
 
   modifyItem(user: IUser) {
-    return this.http.post(`${this.url}/${user.id}`, user).pipe(map((res: IUser) => res));
+    return this.http.put(`${this.url}/${user.id}`, user).pipe(map((res: IUser) => res));
   }
 
   removeItem(user: IUser) {
