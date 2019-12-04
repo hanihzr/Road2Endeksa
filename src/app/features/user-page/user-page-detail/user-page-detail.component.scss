@@ -1,10 +1,14 @@
-.register-container {
+.avatar {
+  display: inline-flex;
+}
+
+.user-container {
   padding: 64px;
   width: fit-content;
   margin: auto;
 
 
-  .register {
+  .user {
     width: 50%;
     margin: auto;
     display: flex;

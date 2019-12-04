@@ -1,11 +1,15 @@
-<ndska-input (changedValue)="nameChanged($event)" [placeholder]="'Name'" [required]="true">
-</ndska-input>
-<ndska-input (changedValue)="lastnameChanged($event)" [placeholder]="'Last Name'" [required]="true">
-</ndska-input>
-<ndska-input (changedValue)="usernameChanged($event)" [placeholder]="'Username'" [required]="true" [type]="'email'">
-</ndska-input>
-<ndska-input (changedValue)="passwordChanged($event)" [placeholder]="'Password'" [type]="'password'"></ndska-input>
+<div class="register-container">
+  <ndska-input (changedValue)="nameChanged($event)" [placeholder]="'Name'" [required]="true">
+  </ndska-input>
+  <ndska-input (changedValue)="lastnameChanged($event)" [placeholder]="'Last Name'" [required]="true">
+  </ndska-input>
+  <ndska-input (changedValue)="emailChanged($event)" [placeholder]="'email'" [required]="true" [type]="'email'">
+  </ndska-input>
+  <ndska-input (changedValue)="passwordChanged($event)" [placeholder]="'Password'" [type]="'password'"></ndska-input>
 
-<div class="register">
-  <button ndskaButton [color]="'#27ae60'">Register</button>
+  <div class="register">
+    <button ndskaButton [color]="'#27ae60'" (click)="signup()">Register</button>
+    <a [routerLink]="['/']">Login</a>
+  </div>
+
 </div>

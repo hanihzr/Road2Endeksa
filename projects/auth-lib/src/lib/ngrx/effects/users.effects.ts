@@ -68,7 +68,14 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.SelectUserById),
       mergeMap(({ id }) =>
-        this.userAuthService.getById(id).pipe(map(res => fromActions.SelectUser({ user: res })))
+        this.userAuthService.getById(id).pipe(
+          map(res => {
+            this.eventsHandlerService.successHappened.next(
+              `Welcom dear ${res.first_name}  ${res.last_name}`
+            );
+            return fromActions.SelectUser({ user: res });
+          })
+        )
       )
     )
   );
@@ -76,7 +83,7 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(fromActions.AddUserFail, fromActions.UpdateUserFail, fromActions.RemoveUserFail),
       map(({ err }) => {
-        this.eventsHandlerService.errorHappened.next(err);
+        this.eventsHandlerService.errorHappened.next(err.message);
 
         return fromActions.triggerEvent(fromActions.UserErrorEventTriggered);
       })

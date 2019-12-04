@@ -1,1 +1,27 @@
-<p>user-page works!</p>
+<div class="user-page">
+  <div class="page">
+    <table>
+      <thead>
+        <tr>
+          <th class="id-header">id</th>
+          <th colspan="2"><span class="name-header">name</span></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let user of users">
+          <td class="id"><span class="id">{{user?.id}}</span></td>
+          <td>{{user?.first_name}} {{user?.last_name}}</td>
+          <td class="actions">
+            <a (click)="edit(user)">Edit</a>
+            <a (click)="delete(user)">Remove</a>
+          </td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { IUser, selectedUser } from 'dist/auth-lib';
+import { IUser, SelectUser, LoadUsers, selectAllUsers, RemoveUser } from 'dist/auth-lib';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,17 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
-  user: IUser = {} as IUser;
+  users: IUser[];
 
-  constructor(private store: Store<{ user: IUser }>, router: Router) {
-    this.store.select(selectedUser).subscribe(user => {
-      if (user) {
-        this.user = Object.assign({}, user);
-      } else {
-        router.navigateByUrl('/');
+  constructor(private store: Store<{ user: IUser }>, private router: Router) {
+    store.dispatch(LoadUsers());
+    window.scroll(0, 0);
+  }
+
+  ngOnInit() {
+    this.store.select(selectAllUsers).subscribe(users => {
+      if (users) {
+        this.users = users;
       }
     });
   }
 
-  ngOnInit() {}
+  edit(user: IUser) {
+    this.store.dispatch(SelectUser({ user }));
+    this.router.navigateByUrl(`user-page/users/${user.id}`);
+  }
+
+  delete(user: IUser) {
+    this.store.dispatch(RemoveUser({ user }));
+  }
 }

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   name: string;
   lastname: string;
-  username: string;
+  email: string;
   password: string;
 
   constructor(private store: Store<{ user: IUser }>, private router: Router) {}
@@ -25,8 +25,8 @@ export class SignUpComponent implements OnInit {
   lastnameChanged(lastname: string) {
     this.lastname = lastname;
   }
-  usernameChanged(username: string) {
-    this.username = username;
+  emailChanged(email: string) {
+    this.email = email;
   }
   passwordChanged(password: string) {
     this.password = password;
@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
     const user: IUser = {
       first_name: this.name,
       last_name: this.lastname,
-      username: this.username,
+      username: this.email,
       password: this.password
     };
 
