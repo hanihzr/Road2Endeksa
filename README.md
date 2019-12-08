@@ -2,7 +2,7 @@
 
 
 
-> Note: This project is using [Angular Library](https://angular.io/guide/libraries). so the library I created for Authenticatuion is named **AuthLib** - which contains services and `Ngrx/store, Ngrx/Effects, Ngrx/entity`  sould be built before anything.
+> Note: This project is using [Angular Library](https://angular.io/guide/libraries). so the library I created for Authenticatuion is named **AuthLib** - which contains services and `Ngrx/store, Ngrx/Effects, Ngrx/entity`  it must be built before anything.
 
 Please remember to use `ng build AuthLib` before running `ng serve`
 
