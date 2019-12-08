@@ -2,7 +2,7 @@
 
 
 
-> This project is using Angular Library.
+> This project is using **Angular Library**.
 
 Please remember to use `ng build AuthLib` before running `ng serve`
 
