@@ -2,7 +2,7 @@
 
 
 
-> This project is using **Angular Library**.
+> Note: This project is using **Angular Library**. so the library AuthLib sould be built before anything.
 
 Please remember to use `ng build AuthLib` before running `ng serve`
 
