@@ -9,7 +9,7 @@ Description
 
 This was an assignment that was sent to me from endeksa.com with the following description:
 
-``
+```
 ENDEKSA FE:
 
 Lets create a log-in system for an imaginary application. 
@@ -44,4 +44,4 @@ DATA:
 {"id":8,"username":"Biodex","first_name":"Eyde","last_name":"McKissack","password":"0umGoWkXA","photo":"http://dummyimage.com/229x121.png/cc0000/ffffff","email":"emckissack7@goo.ne.jp"},
 {"id":9,"username":"Prodder","first_name":"Orran","last_name":"O'Duane","password":"Ms4gx2R","photo":"http://dummyimage.com/214x172.bmp/ff4444/ffffff","email":"ooduane8@simplemachines.org"},
 {"id":10,"username":"Span","first_name":"Abie","last_name":"Folkard","password":"mDUVLTM","photo":"http://dummyimage.com/167x148.jpg/dddddd/000000","email":"afolkard9@discovery.com"}]
-``
+```
