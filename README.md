@@ -2,12 +2,12 @@
 
 
 
-This project is using Angular Library.
+> This project is using Angular Library.
 
 Please remember to use `ng build AuthLib` before running `ng serve`
 
 
-Description
+## Description:
 
 This is an assignment after a job interview with [Endeksa](https://www.endeksa.com/)  that was sent to me with the following description:
 
