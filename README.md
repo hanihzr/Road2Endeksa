@@ -9,7 +9,7 @@ Please remember to use `ng build AuthLib` before running `ng serve`
 
 ## Description:
 
-This is an assignment after a job interview with [Endeksa](https://www.endeksa.com/)  that was sent to me with the following description:
+This is an assignment for a job interview with [Endeksa](https://www.endeksa.com/)  that was sent to me with the following description:
 
 ```
 ENDEKSA FE:
@@ -47,3 +47,5 @@ DATA:
 {"id":9,"username":"Prodder","first_name":"Orran","last_name":"O'Duane","password":"Ms4gx2R","photo":"http://dummyimage.com/214x172.bmp/ff4444/ffffff","email":"ooduane8@simplemachines.org"},
 {"id":10,"username":"Span","first_name":"Abie","last_name":"Folkard","password":"mDUVLTM","photo":"http://dummyimage.com/167x148.jpg/dddddd/000000","email":"afolkard9@discovery.com"}]
 ```
+###TODO:
+ my Medium.com blog will be available soon
