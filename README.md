@@ -50,4 +50,4 @@ DATA:
 
 
 #### TODO:
- my Medium.com blog will be available soon
+ my Medium.com blog will be available soon...
