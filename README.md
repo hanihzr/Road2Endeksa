@@ -1,5 +1,7 @@
 # Road2Endeksa
 
+
+
 This project is using Angular Library.
 
 Please remember to use `ng build AuthLib` before running `ng serve`
@@ -7,7 +9,7 @@ Please remember to use `ng build AuthLib` before running `ng serve`
 
 Description
 
-This was an assignment that was sent to me from endeksa.com with the following description:
+This is an assignment after a job interview with [Endeksa](https://www.endeksa.com/)  that was sent to me with the following description:
 
 ```
 ENDEKSA FE:
