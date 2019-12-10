@@ -2,14 +2,14 @@
 
 
 
-> Note: This project is using [Angular Library](https://angular.io/guide/libraries). so the library I created for Authenticatuion is named **AuthLib** - which contains services and `Ngrx/store, Ngrx/Effects, Ngrx/entity`  and it must be built before anything.
+> Note: This project is using [Angular Library](https://angular.io/guide/libraries). And The library I created for Authenticatuion is named **AuthLib** - which contains services and `Ngrx/store, Ngrx/Effects, Ngrx/entity`  and it must be built before anything.
 
 Please remember to use `ng build AuthLib` before running `ng serve`
 
 
 ## Description:
 
-This is an assignment for a job interview with [Endeksa](https://www.endeksa.com/)  that was sent to me with the following description:
+This is an assignment for a job interview with [Endeksa](https://www.endeksa.com/)  which was sent to me with the following description:
 
 ```
 ENDEKSA FE:
